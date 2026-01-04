@@ -21,7 +21,7 @@ export default function SchoolWebsite() {
     <Button variant="ghost" onClick={() => scrollToSection("historia")}>
       Historia
     </Button>
-    <Button variant="ghost" onClick={() => scrollToSection("basica")}>
+    <Button variant="ghost" onClick={() => scrollToSection("Básica")}>
       Básica
     </Button>
     <Button variant="ghost" onClick={() => scrollToSection("especialidades")}>
@@ -30,7 +30,7 @@ export default function SchoolWebsite() {
     <Button variant="ghost" onClick={() => scrollToSection("preguntas")}>
       Preguntas
     </Button>
-    <Button variant="ghost" onClick={() => scrollToSection("contacto")}>
+    <Button variant="ghost" onClick={() => scrollToSection("Contacto")}>
       Contacto
     </Button>
   </nav>
@@ -368,7 +368,7 @@ export default function SchoolWebsite() {
           </div>
 
           <p className="text-center text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty">
-            En la Unidad Educativa Carmen Mora de Encalada ofrecemos tres especialidades:
+            En la Unidad Educativa Carmen Mora de Encalada ofrecemos tres especialidades para bachillerato:
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center mb-12">
