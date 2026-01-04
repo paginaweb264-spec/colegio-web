@@ -4,36 +4,55 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, History, Briefcase, HelpCircle, BookOpen, Calculator, Monitor, Phone, MapPin } from "lucide-react"
 
+import { Menu, X } from "lucide-react"
+import { useState } from "react"
+
 export default function SchoolWebsite() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     element?.scrollIntoView({ behavior: "smooth" })
   }
-
+const [menuOpen, setMenuOpen] = useState(false)
   return (
     <div className="min-h-screen bg-background">
       {/* Menú fijo */}
-    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-  <nav className="flex justify-center gap-2 py-2 pointer-events-auto">
-    <Button variant="ghost" onClick={() => scrollToSection("inicio")}>
-      Inicio
-    </Button>
-    <Button variant="ghost" onClick={() => scrollToSection("historia")}>
-      Historia
-    </Button>
-    <Button variant="ghost" onClick={() => scrollToSection("Básica")}>
-      Básica
-    </Button>
-    <Button variant="ghost" onClick={() => scrollToSection("especialidades")}>
-      Especialidades
-    </Button>
-    <Button variant="ghost" onClick={() => scrollToSection("preguntas")}>
-      Preguntas
-    </Button>
-    <Button variant="ghost" onClick={() => scrollToSection("Contacto")}>
-      Contacto
-    </Button>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <nav className="flex items-center justify-between px-4 py-2">
+
+    {/* Logo */}
+    <img
+      src="/logo.jpg"
+      alt="Logo del colegio"
+      className="h-0 w-auto cursor-pointer"
+      onClick={() => scrollToSection("inicio")}
+    />
+
+    {/* Botón hamburguesa (PC y móvil) */}
+    <button onClick={() => setMenuOpen(!menuOpen)}>
+      {menuOpen ? <X size={28} /> : <Menu size={28} />}
+    </button>
   </nav>
+
+  {/* Menú lateral */}
+  {menuOpen && (
+    <div
+      className="
+        fixed top-16 bottom-0 z-40
+        w-64 bg-background
+        left-0 md:left-auto md:right-0
+        shadow-lg
+      "
+    >
+      <div className="flex flex-col items-start gap-4 p-6">
+        <Button variant="ghost" onClick={() => { scrollToSection("inicio"); setMenuOpen(false) }}>Inicio</Button>
+        <Button variant="ghost" onClick={() => { scrollToSection("historia"); setMenuOpen(false) }}>Historia</Button>
+        <Button variant="ghost" onClick={() => { scrollToSection("Básica"); setMenuOpen(false) }}>Básica</Button>
+        <Button variant="ghost" onClick={() => { scrollToSection("especialidades"); setMenuOpen(false) }}>Especialidades</Button>
+        <Button variant="ghost" onClick={() => { scrollToSection("preguntas"); setMenuOpen(false) }}>Preguntas</Button>
+        <Button variant="ghost" onClick={() => { scrollToSection("Contacto"); setMenuOpen(false) }}>Contacto</Button>
+      </div>
+    </div>
+  )}
 </header>
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12 text-center bg-gradient-to-b from-primary/5 to-background">
