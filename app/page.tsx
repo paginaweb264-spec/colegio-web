@@ -12,6 +12,29 @@ export default function SchoolWebsite() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Menú fijo */}
+    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur border-b">
+      <nav className="max-w-6xl mx-auto flex flex-wrap gap-2 px-4 py-3 justify-center">
+        <Button variant="ghost" onClick={() => scrollToSection("inicio")}>
+          Inicio
+        </Button>
+        <Button variant="ghost" onClick={() => scrollToSection("historia")}>
+          Historia
+        </Button>
+        <Button variant="ghost" onClick={() => scrollToSection("Básica")}>
+          Básica
+        </Button>
+        <Button variant="ghost" onClick={() => scrollToSection("especialidades")}>
+          Especialidades
+        </Button>
+        <Button variant="ghost" onClick={() => scrollToSection("preguntas")}>
+          Preguntas
+        </Button>
+        <Button variant="ghost" onClick={() => scrollToSection("Contacto")}>
+          Contacto
+        </Button>
+      </nav>
+    </header>
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12 text-center bg-gradient-to-b from-primary/5 to-background">
         {/* Barra superior con logo */}
