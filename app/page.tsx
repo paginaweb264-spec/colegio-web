@@ -13,28 +13,28 @@ export default function SchoolWebsite() {
   return (
     <div className="min-h-screen bg-background">
       {/* Menú fijo */}
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur border-b">
-      <nav className="max-w-6xl mx-auto flex flex-wrap gap-2 px-4 py-3 justify-center">
-        <Button variant="ghost" onClick={() => scrollToSection("inicio")}>
-          Inicio
-        </Button>
-        <Button variant="ghost" onClick={() => scrollToSection("historia")}>
-          Historia
-        </Button>
-        <Button variant="ghost" onClick={() => scrollToSection("Básica")}>
-          Básica
-        </Button>
-        <Button variant="ghost" onClick={() => scrollToSection("especialidades")}>
-          Especialidades
-        </Button>
-        <Button variant="ghost" onClick={() => scrollToSection("preguntas")}>
-          Preguntas
-        </Button>
-        <Button variant="ghost" onClick={() => scrollToSection("Contacto")}>
-          Contacto
-        </Button>
-      </nav>
-    </header>
+    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+  <nav className="flex justify-center gap-2 py-2 pointer-events-auto">
+    <Button variant="ghost" onClick={() => scrollToSection("inicio")}>
+      Inicio
+    </Button>
+    <Button variant="ghost" onClick={() => scrollToSection("historia")}>
+      Historia
+    </Button>
+    <Button variant="ghost" onClick={() => scrollToSection("basica")}>
+      Básica
+    </Button>
+    <Button variant="ghost" onClick={() => scrollToSection("especialidades")}>
+      Especialidades
+    </Button>
+    <Button variant="ghost" onClick={() => scrollToSection("preguntas")}>
+      Preguntas
+    </Button>
+    <Button variant="ghost" onClick={() => scrollToSection("contacto")}>
+      Contacto
+    </Button>
+  </nav>
+</header>
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12 text-center bg-gradient-to-b from-primary/5 to-background">
         {/* Barra superior con logo */}
@@ -42,7 +42,7 @@ export default function SchoolWebsite() {
   <img
     src="/logo.jpg"
     alt="Logo del colegio"
-    className="h-20 w-auto"
+    className="h-25 w-auto"
   />
 </div>
         <GraduationCap className="w-20 h-20 md:w-24 md:h-24 text-primary mb-6" />
